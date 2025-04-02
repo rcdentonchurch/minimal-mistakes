@@ -5,18 +5,20 @@
 <div itemscope itemtype="https://schema.org/Person" class="h-card">
 
   <div class="author__content" style="width: 100%;">
-    <h3 class="author__name p-name" ><i class="fab fa-fw fa-clock-o" aria-hidden="true"></i> Sunday Mass</h3>
-    <ul style="margin-top: 5px;margin-bottom: 5px;">
+    <h3 class="author__name p-name text-center" >Sunday Mass</h3>
+    <ul class="sidebar-list">
       {% for mass in parish.sundaymass %}
         <li>
           <div class="">
-            <span>{{ mass.label }}</span>
-            <span>on {{ mass.day }} at {{ mass.time }}</span>
+            <span class="label">{{ mass.label }}</span>
+            <span class="detail">on {{ mass.day }} at {{ mass.time }}</span>
           </div>
         </li>
       {% endfor %}
     </ul>
   </div>
+
+  
 
   <!-- {% if author.avatar %}
     <div class="author__avatar">
@@ -37,8 +39,10 @@
     {% endif %}
   </div> -->
 
-  <div class="author__urls-wrapper">
+  <div class="author__urls-wrapper" style="width: 100%;">
+    <hr>
     <button class="btn btn--inverse">{{ site.data.ui-text[site.locale].follow_label | remove: ":" | default: "Follow" }}</button>
+    
     <ul class="author__urls social-icons">
       {% if author.location %}
         <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
